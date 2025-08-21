@@ -11,14 +11,14 @@ import { CommonModule } from '@angular/common';
 export class PokemonCard implements OnInit {
   @Input() pokemon: any;
 
+  pokemonId: string = '';
   imageUrl: string = '';
 
   ngOnInit(): void {
     if (this.pokemon) {
-      // Extrai o ID da URL do Pokémon
-      const pokemonId = this.pokemon.url.split('/')[6];
-      // Constrói a URL da imagem usando o ID
-      this.imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
+      // Agora pegamos o ID e a imagem diretamente dos dados detalhados!
+      this.pokemonId = this.pokemon.id.toString().padStart(3, '0');
+      this.imageUrl = this.pokemon.sprites.front_default;
     }
   }
 }

@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonService.getPokemons()
-      .subscribe((response: any) => {
-        this.pokemons = response.results;
+      .subscribe((response: any[]) => {
+        this.pokemons = response;
       });
   }
 }

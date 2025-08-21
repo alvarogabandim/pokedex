@@ -1,4 +1,15 @@
-<div *ngIf="pokemon">
+<div *ngIf="pokemon" class="pokemon-card-content">
+  <span class="pokemon-id">#{{ pokemonId }}</span>
+
   <img [src]="imageUrl" [alt]="pokemon.name">
-  <p>{{ pokemon.name }}</p>
+
+  <h3 class="pokemon-name">{{ pokemon.name }}</h3>
+
+  <div class="pokemon-types">
+    <span *ngFor="let typeInfo of pokemon.types"
+          class="type"
+          [ngClass]="'type-' + typeInfo.type.name">
+      {{ typeInfo.type.name }}
+    </span>
+  </div>
 </div>
