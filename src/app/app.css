@@ -1,0 +1,35 @@
+/* :host é um seletor especial do Angular para estilizar o próprio componente */
+:host {
+  text-align: center;
+}
+
+.header {
+  background-color: #ef5350; /* Vermelho Pokémon como cor de fundo principal */
+  padding: 20px;
+  color: white; /* Cor padrão para qualquer outro texto que possa aparecer no header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 5px solid #c62828; /* Vermelho mais escuro para a borda */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f1c40f; /* SEU AMARELO DE MARCA como cor de destaque! */
+  
+  /* Toque profissional: uma pequena sombra no texto para dar profundidade e legibilidade */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.main-content {
+  padding: 20px;
+}
+
+.pokemon-grid {
+  display: grid;
+  /* Cria colunas responsivas: elas terão no mínimo 200px, 
+     e o grid vai tentar encaixar o máximo de colunas que puder */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Espaçamento entre os cards */
+  padding: 20px;
+}

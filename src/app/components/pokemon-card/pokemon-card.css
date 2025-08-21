@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  cursor: pointer; /* Adiciona a "mãozinha" para indicar que é clicável no futuro */
+}
+
+
+:host:hover {
+    transform: scale(1.05);
+}
+
+img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+p {
+  text-transform: capitalize; /* Deixa a primeira letra de cada nome maiúscula */
+  margin: 0;
+  font-weight: bold;
+}

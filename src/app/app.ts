@@ -1,12 +1,25 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PokemonService } from './services/pokemon'; // <-- CORRIGIDO
+import { CommonModule } from '@angular/common';
+import { PokemonCard } from './components/pokemon-card/pokemon-card';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, CommonModule, PokemonCard],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('pokedex');
+export class AppComponent implements OnInit {
+  pokemons: any[] = [];
+
+  constructor(private pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
+    this.pokemonService.getPokemons()
+      .subscribe((response: any) => {
+        this.pokemons = response.results;
+      });
+  }
 }
