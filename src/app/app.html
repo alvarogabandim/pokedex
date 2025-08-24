@@ -4,11 +4,18 @@
 
 <main class="main-content">
   <div class="pokemon-grid">
-    <app-pokemon-card 
-      *ngFor="let pokemon of pokemons" 
-      [pokemon]="pokemon">
-    </app-pokemon-card>
+
+    <a *ngFor="let pokemon of pokemons" 
+       [routerLink]="['/pokemon', pokemon.id]"
+       class="pokemon-link">
+
+      <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+
+    </a>
+
   </div>
 </main>
+
+<router-outlet></router-outlet>
 
 <router-outlet></router-outlet>

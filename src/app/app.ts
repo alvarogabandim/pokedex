@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { PokemonService } from './services/pokemon'; // <-- CORRIGIDO
+// 1. O RouterModule PRECISA ser importado aqui
+import { RouterOutlet, RouterModule } from '@angular/router'; 
+import { PokemonService } from './services/pokemon';
 import { CommonModule } from '@angular/common';
 import { PokemonCard } from './components/pokemon-card/pokemon-card';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, PokemonCard],
+  // 2. O RouterModule PRECISA estar nesta lista de imports!
+  imports: [RouterOutlet, CommonModule, PokemonCard, RouterModule], 
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

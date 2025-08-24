@@ -33,3 +33,8 @@
   gap: 20px; /* Espaçamento entre os cards */
   padding: 20px;
 }
+
+.pokemon-link {
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit;      /* Faz o texto do link "herdar" a cor do elemento pai */
+}
