@@ -1,0 +1,100 @@
+:host {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.detail-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.pokemon-header {
+  text-align: center;
+  text-transform: capitalize;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.pokemon-header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #333;
+}
+
+.pokemon-id {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.pokemon-body {
+  display: flex;
+  gap: 2rem;
+}
+
+.pokemon-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-image img {
+  width: 250px;
+  height: auto;
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.pokemon-info {
+  flex: 1;
+  text-align: left;
+}
+
+.pokemon-info h2 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.pokemon-info h2:first-child {
+  margin-top: 0;
+}
+
+.pokemon-info p {
+  margin: 0.5rem 0;
+}
+
+.stats-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.stats-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  text-transform: capitalize;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+.pokemon-types { display: flex; gap: 7px; }
+.type { padding: 5px 12px; border-radius: 15px; color: white; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+.type-grass { background-color: #78C850; } .type-poison { background-color: #A040A0; } .type-fire { background-color: #F08030; } .type-water { background-color: #6890F0; } .type-bug { background-color: #A8B820; } .type-normal { background-color: #A8A878; } .type-flying { background-color: #A890F0; } .type-electric { background-color: #F8D030; } .type-ground { background-color: #E0C068; } .type-fairy { background-color: #EE99AC; } .type-fighting { background-color: #C03028; } .type-psychic { background-color: #F85888; } .type-rock { background-color: #B8A038; } .type-steel { background-color: #B8B8D0; } .type-ice { background-color: #98D8D8; } .type-ghost { background-color: #705898; } .type-dragon { background-color: #7038F8; } .type-dark { background-color: #705848; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

@@ -1,11 +1,8 @@
 import { Routes } from '@angular/router';
-// Importando a classe com seu nome completo e correto
-import { PokemonDetail } from './pages/pokemon-detail/pokemon-detail';
+import { PokemonListComponent } from './pages/pokemon-list/pokemon-list';
+import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail';
 
 export const routes: Routes = [
-  {
-    path: 'pokemon/:id',
-    // Usando o nome completo e correto do componente
-    component: PokemonDetail
-  }
+  { path: '', component: PokemonListComponent },
+  { path: 'pokemon/:id', component: PokemonDetailComponent }
 ];

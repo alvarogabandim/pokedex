@@ -1,23 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'; // 1. Importamos a ferramenta de rota
+import { ActivatedRoute, RouterModule } from '@angular/router'; // Adicionado RouterModule
 import { CommonModule } from '@angular/common';
+import { PokemonService } from '../../services/pokemon';
 
 @Component({
   selector: 'app-pokemon-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule], // Adicionado RouterModule
   templateUrl: './pokemon-detail.html',
-  styleUrl: './pokemon-detail.css'
+  styleUrls: ['./pokemon-detail.css']
 })
-export class PokemonDetail implements OnInit { // Lembre-se que o nome da sua classe pode ser PokemonDetailComponent
+export class PokemonDetailComponent implements OnInit {
+  // AQUI ESTÁ A LINHA QUE FALTAVA!
+  pokemon: any = null; 
 
-  // Injetamos o ActivatedRoute no construtor para podermos usá-lo
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private pokemonService: PokemonService
+  ) { }
 
   ngOnInit(): void {
-    // Pegamos o 'id' da URL e o exibimos no console para teste
     const pokemonId = this.route.snapshot.paramMap.get('id');
-    console.log('O ID do Pokémon nesta página é:', pokemonId);
+    if (pokemonId) {
+      this.pokemonService.getPokemonDetails(pokemonId)
+        .subscribe((data: any) => {
+          this.pokemon = data;
+        });
+    }
   }
-
 }

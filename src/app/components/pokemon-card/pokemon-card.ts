@@ -6,9 +6,10 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './pokemon-card.html',
-  styleUrl: './pokemon-card.css'
+  styleUrl: './pokemon-card.css',
 })
-export class PokemonCard implements OnInit {
+export class PokemonCardComponent implements OnInit {
+  // Corrigido
   @Input() pokemon: any;
 
   pokemonId: string = '';
@@ -16,7 +17,6 @@ export class PokemonCard implements OnInit {
 
   ngOnInit(): void {
     if (this.pokemon) {
-      // Agora pegamos o ID e a imagem diretamente dos dados detalhados!
       this.pokemonId = this.pokemon.id.toString().padStart(3, '0');
       this.imageUrl = this.pokemon.sprites.front_default;
     }

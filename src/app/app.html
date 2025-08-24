@@ -2,20 +2,6 @@
   <h1>Pokédex</h1>
 </header>
 
-<main class="main-content">
-  <div class="pokemon-grid">
 
-    <a *ngFor="let pokemon of pokemons" 
-       [routerLink]="['/pokemon', pokemon.id]"
-       class="pokemon-link">
-
-      <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
-
-    </a>
-
-  </div>
-</main>
-
-<router-outlet></router-outlet>
 
 <router-outlet></router-outlet>

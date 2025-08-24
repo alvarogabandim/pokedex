@@ -1,1 +1,31 @@
-<p>pokemon-detail works!</p>
+<div class="detail-container" *ngIf="pokemon">
+<div class="pokemon-header">
+  <h1 class="pokemon-name">{{ pokemon.name }}</h1>
+  <span class="pokemon-id">#{{ pokemon.id.toString().padStart(3, '0') }}</span>
+</div>
+
+<div class="pokemon-body">
+  <div class="pokemon-image">
+    <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name">
+    <div class="pokemon-types">
+      <span *ngFor="let typeInfo of pokemon.types"
+            class="type"
+            [ngClass]="'type-' + typeInfo.type.name">
+        {{ typeInfo.type.name }}
+      </span>
+    </div>
+  </div>
+  <div class="pokemon-info">
+    <h2>Detalhes</h2>
+    <p><strong>Altura:</strong> {{ pokemon.height / 10 }} m</p>
+    <p><strong>Peso:</strong> {{ pokemon.weight / 10 }} kg</p>
+    <h2>Stats Base</h2>
+    <ul class="stats-list">
+      <li *ngFor="let stat of pokemon.stats">
+        <span class="stat-name">{{ stat.stat.name }}</span>
+        <span class="stat-value">{{ stat.base_stat }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>

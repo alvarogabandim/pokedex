@@ -25,16 +25,3 @@
   padding: 20px;
 }
 
-.pokemon-grid {
-  display: grid;
-  /* Cria colunas responsivas: elas terão no mínimo 200px, 
-     e o grid vai tentar encaixar o máximo de colunas que puder */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px; /* Espaçamento entre os cards */
-  padding: 20px;
-}
-
-.pokemon-link {
-  text-decoration: none; /* Remove o sublinhado do link */
-  color: inherit;      /* Faz o texto do link "herdar" a cor do elemento pai */
-}
